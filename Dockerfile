@@ -1,6 +1,6 @@
 FROM apify/actor-node-playwright-chrome:20
 
-COPY package*.json ./
+COPY --chown=myuser package*.json ./
 
 RUN npm --quiet set progress=false \
     && npm install \
@@ -11,7 +11,7 @@ RUN npm --quiet set progress=false \
     && echo "NPM version:" \
     && npm --version
 
-COPY . ./
+COPY --chown=myuser . ./
 
 RUN npm run build \
     && npm prune --omit=dev
