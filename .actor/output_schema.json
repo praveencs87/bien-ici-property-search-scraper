@@ -1,0 +1,14 @@
+{
+    "actorOutputSchemaVersion": 1,
+    "title": "Bien'ici Scraper Output",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "dataset": {
+            "title": "Extracted Properties",
+            "type": "string",
+            "description": "Dataset containing scraped property items",
+            "template": "default"
+        }
+    }
+}

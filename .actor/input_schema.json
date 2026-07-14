@@ -1,0 +1,33 @@
+{
+    "title": "Bien'ici Scraper Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "startUrls": {
+            "title": "Start URLs",
+            "type": "array",
+            "description": "List of Bien'ici search URLs to scrape. (e.g. https://www.bienici.com/recherche/achat/paris-75000)",
+            "editor": "requestListSources",
+            "default": [{"url": "https://www.bienici.com/recherche/achat/paris-75000"}],
+            "prefill": [{"url": "https://www.bienici.com/recherche/achat/paris-75000"}]
+        },
+        "maxItems": {
+            "title": "Max Items",
+            "type": "integer",
+            "description": "Maximum number of properties to extract",
+            "editor": "number",
+            "minimum": 1,
+            "default": 100,
+            "prefill": 100
+        },
+        "proxyConfiguration": {
+            "title": "Proxy Configuration",
+            "type": "object",
+            "description": "Proxy settings. French proxies are recommended.",
+            "editor": "proxy",
+            "default": { "useApifyProxy": true, "apifyProxyCountry": "FR" },
+            "prefill": { "useApifyProxy": true, "apifyProxyCountry": "FR" }
+        }
+    },
+    "required": ["startUrls"]
+}

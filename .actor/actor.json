@@ -1,0 +1,48 @@
+{
+    "actorSpecification": 1,
+    "name": "bien-ici-property-search-scraper",
+    "title": "Bien'ici Property Search Scraper",
+    "description": "Scrape property listings, prices, sizes, and real estate data from Bien'ici (France). Ideal for market research and finding leads.",
+    "version": "1.0.0",
+    "isPublic": true,
+    "seoTitle": "Bien'ici Scraper: Extract French Real Estate Listings",
+    "seoDescription": "Scrape property data from Bien'ici. Extract prices, locations, square meters, rooms, and real estate agency details from the French housing market.",
+    "categories": ["REAL_ESTATE", "DATA_EXTRACTION"],
+    "defaultRunOptions": {
+        "build": "latest",
+        "timeoutSecs": 3600,
+        "memoryMbytes": 2048
+    },
+    "input": "./input_schema.json",
+    "output": "./output_schema.json",
+    "dockerfile": "../Dockerfile",
+    "minMemoryMbytes": 1024,
+    "maxMemoryMbytes": 4096,
+    "pricingModel": "PAY_PER_EVENT",
+    "pricingEvents": [
+        {
+            "eventName": "apify-actor-start",
+            "pricePerEvent": 0.00005,
+            "description": "Charged once when Actor starts (includes free 5s compute)"
+        },
+        {
+            "eventName": "lead-extracted",
+            "pricePerEvent": 0.002,
+            "description": "Charged per property listing extracted"
+        }
+    ],
+    "storages": {
+        "dataset": {
+            "actorSpecification": 1,
+            "title": "Extracted Properties Dataset",
+            "views": {
+                "overview": {
+                    "title": "Overview",
+                    "transformation": {
+                        "fields": ["title", "price", "location", "area", "rooms", "agencyName", "url"]
+                    }
+                }
+            }
+        }
+    }
+}
