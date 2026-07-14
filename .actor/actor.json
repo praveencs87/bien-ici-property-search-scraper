@@ -3,7 +3,7 @@
     "name": "bien-ici-property-search-scraper",
     "title": "Bien'ici Property Search Scraper",
     "description": "Scrape property listings, prices, sizes, and real estate data from Bien'ici (France). Ideal for market research and finding leads.",
-    "version": "1.0.0",
+    "version": "1.0",
     "isPublic": true,
     "seoTitle": "Bien'ici Scraper: Extract French Real Estate Listings",
     "seoDescription": "Scrape property data from Bien'ici. Extract prices, locations, square meters, rooms, and real estate agency details from the French housing market.",
