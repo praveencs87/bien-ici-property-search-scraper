@@ -3,7 +3,7 @@ FROM apify/actor-node-playwright-chrome:20
 COPY --chown=myuser package*.json ./
 
 RUN npm --quiet set progress=false \
-    && npm install \
+    && npm install --include=dev \
     && echo "Installed NPM packages:" \
     && (npm list || true) \
     && echo "Node.js version:" \
